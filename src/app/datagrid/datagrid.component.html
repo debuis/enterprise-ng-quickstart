@@ -1,0 +1,57 @@
+<div class="full-width full-height scrollable-flex">
+  <div soho-toolbar-flex style="height: auto;" (selected)="personalizeMenu.onSelectedToolbar($event)">
+    <soho-toolbar-flex-section [isTitle]="true">
+      <nav class="breadcrumb">
+        <ol aria-label="breadcrumb">
+          <li class="current">
+            <h2>Title</h2>
+          </li>
+        </ol>
+      </nav>
+    </soho-toolbar-flex-section>
+
+    <soho-toolbar-flex-section [isSearch]="true">
+      <input
+        soho-toolbar-flex-searchfield
+        id="user-list-toolbar-searchfield"
+        name="common-toolbar-searchfield"
+        placeholder="{{ 'Search...' | sohoTranslate }}"
+        [clearable]="true"
+        [collapsible]="true"
+      />
+    </soho-toolbar-flex-section>
+
+    <soho-toolbar-flex-section [isButtonSet]="true">
+    </soho-toolbar-flex-section>
+
+    <soho-toolbar-flex-more-button>
+      <!-- <app-personalize-menu></app-personalize-menu> -->
+      <app-personalize-grid-menu></app-personalize-grid-menu>
+    </soho-toolbar-flex-more-button>
+  </div>
+
+  <div class="scrollable-flex" [style.height]="'100%'">
+    <div class="scrollable-flex-content">
+      <div
+        soho-datagrid
+        [columns]="columns"
+        id="user-grid-datagrid"
+        [data]="(response$ | async) || []"
+        [selectable]="'multiple'"
+        [disableClientSort]="true"
+        [disableClientFilter]="true"
+        [enableTooltips]="true"
+        [filterable]="true"
+        [columnReorder]="true"
+        [saveUserSettings]="{
+          columns: true,
+          rowHeight: true,
+          sortOrder: true,
+          pagesize: true,
+          activePage: true,
+          filter: true
+        }"
+      ></div>
+    </div>
+  </div>
+</div>

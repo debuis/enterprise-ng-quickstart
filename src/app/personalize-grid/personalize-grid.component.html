@@ -1,0 +1,40 @@
+<ul soho-popupmenu id="personalisedPopupmenu">
+  <li soho-popupmenu-heading>{{'Filter' | sohoTranslate}}</li>
+  <li soho-popupmenu-item [isChecked]="filterable">
+    <a soho-popupmenu-label href="#" id="show-filter-btn" data-option="show-filter-row">{{'ShowFilterRow' | sohoTranslate}}</a>
+  </li>
+  <li soho-popupmenu-item>
+    <a soho-popupmenu-label href="#" id="run-filter-btn" data-option="run-filter">{{'RunFilter' | sohoTranslate}}</a>
+  </li>
+  <li soho-popupmenu-item>
+    <a soho-popupmenu-label href="#" id="clear-filter-btn" data-option="clear-filter">{{'ClearFilter' | sohoTranslate}}</a>
+  </li>
+
+  <li soho-popupmenu-separator [singleSelectableSection]="true"></li>
+  <li soho-popupmenu-heading>
+    {{'RowHeight' | sohoTranslate}}
+  </li>
+  <li soho-popupmenu-item [isSelectable]="true" [isChecked]="rowHeight === 'short'">
+    <a soho-popupmenu-label is-checked href="#" id="row-height-short" data-option="row-short">{{'Short' | sohoTranslate}}</a>
+  </li>
+  <li soho-popupmenu-item [isSelectable]="true"  [isChecked]="rowHeight === 'medium'">
+    <a soho-popupmenu-label href="#" id="row-height-medium" data-option="row-medium">{{'Medium' | sohoTranslate}}</a>
+  </li>
+  <li soho-popupmenu-item [isSelectable]="true"  [isChecked]="rowHeight === 'normal'">
+    <a soho-popupmenu-label href="#" id="row-height-normal" data-option="row-normal">{{'Normal' | sohoTranslate}}</a>
+  </li>
+
+  <li soho-popupmenu-separator></li>
+
+  <li soho-popupmenu-item>
+    <a soho-popupmenu-label id="personalize-column-btn" href="#" data-option="personalize-columns">{{'PersonalizeColumns' | sohoTranslate}}</a>
+  </li>
+  <li soho-popupmenu-item>
+    <a soho-popupmenu-label id="reset-layout-btn" href="#" data-option="reset-layout">{{'PersonaliseMenuResetDefaultLabel' | sohoTranslate}}</a>
+  </li>
+
+  <li soho-popupmenu-separator></li>
+  <li soho-popupmenu-item>
+    <a soho-popupmenu-label id="export-excel-btn" href="#" data-option="export-to-excel">{{'PersonliseMenuExportToExcelLabel' | sohoTranslate}}</a>
+  </li>
+</ul>

@@ -5,10 +5,16 @@ import {SohoButtonModule, SohoComponentsModule, SohoLocaleModule} from 'ids-ente
 
 import { AppComponent } from './app.component';
 import { SohoLocaleInitializerModule } from './locale/soho-locale-initializer.module';
+import { DatagridComponent } from './datagrid/datagrid.component';
+import { PersonalizeMenuComponent } from './personalize-menu/personalize-menu.component';
+import { PersonalizeGridComponent } from './personalize-grid/personalize-grid.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DatagridComponent,
+    PersonalizeMenuComponent,
+    PersonalizeGridComponent
   ],
     imports: [
         BrowserModule,
@@ -20,7 +26,7 @@ import { SohoLocaleInitializerModule } from './locale/soho-locale-initializer.mo
   providers: [
     {
       provide: LOCALE_ID,
-      useValue: 'ar-EG'
+      useValue: 'en-GB'
     }
   ],
   bootstrap: [AppComponent]

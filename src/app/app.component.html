@@ -1,4 +1,7 @@
-<soho-icons></soho-icons>
+<a href="#maincontent" class="skip-link" data-translate="text">SkipToMain</a>
+<soho-icons *ngIf="!useUpliftIcons"></soho-icons>
+<soho-icons-uplift *ngIf="useUpliftIcons"></soho-icons-uplift>
+<soho-icons-empty></soho-icons-empty>
 
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
@@ -7,8 +10,7 @@
   </h1>
 
   <button soho-button (click)="clicked()">{{'Alert' | sohoTranslate }}</button>
-  <div class="field">
-    <label for="current-date" class="label">Current Date</label>
-    <input soho-datepicker id="current-date" />
-  </div>
 </div>
+<app-datagrid></app-datagrid>
+
+<div soho-personalize (changetheme)="onChangeTheme($event)"></div>
