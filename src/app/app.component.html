@@ -1,16 +1,40 @@
 <a href="#maincontent" class="skip-link" data-translate="text">SkipToMain</a>
 <soho-icons *ngIf="!useUpliftIcons"></soho-icons>
 <soho-icons-uplift *ngIf="useUpliftIcons"></soho-icons-uplift>
-<soho-icons-empty></soho-icons-empty>
+<soho-icons-empty *ngIf="!useUpliftIcons"></soho-icons-empty>
+<soho-icons-empty-uplift *ngIf="useUpliftIcons"></soho-icons-empty-uplift>
 
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
+<!-- <app-masthead-demo></app-masthead-demo> -->
 
-  <button soho-button (click)="clicked()">{{'Alert' | sohoTranslate }}</button>
+<nav
+  soho-application-menu
+  class="is-personalizable"
+  [filterable]="true"
+  [openOnLarge]="false"
+  [dismissOnClickMobile]="true">
+  <div soho-searchfield-wrapper>
+    <label class="audible" for="application-menu-searchfield">Search</label>
+    <input
+      soho-searchfield
+      id="application-menu-searchfield"
+      [clearable]="true"
+    />
+  </div>
+  <!-- <app-menu></app-menu>-->
+</nav>
+
+<div class="page-container no-scroll">
+  <app-header></app-header>
+  <div id="maincontent" class="page-container scrollable" role="main">
+    <!--The content below is only a placeholder and can be replaced.-->
+    <div style="text-align:center">
+      <h1>Welcome to {{ title }}!</h1>
+      <button soho-button (click)="clicked()">
+        {{ "Alert" | sohoTranslate }}
+      </button>
+    </div>
+    <app-datagrid></app-datagrid>
+  </div>
 </div>
-<app-datagrid></app-datagrid>
 
 <div soho-personalize (changetheme)="onChangeTheme($event)"></div>

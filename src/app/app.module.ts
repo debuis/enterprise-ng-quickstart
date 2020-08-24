@@ -8,13 +8,15 @@ import { SohoLocaleInitializerModule } from './locale/soho-locale-initializer.mo
 import { DatagridComponent } from './datagrid/datagrid.component';
 import { PersonalizeMenuComponent } from './personalize-menu/personalize-menu.component';
 import { PersonalizeGridComponent } from './personalize-grid/personalize-grid.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DatagridComponent,
     PersonalizeMenuComponent,
-    PersonalizeGridComponent
+    PersonalizeGridComponent,
+    HeaderComponent
   ],
     imports: [
         BrowserModule,
